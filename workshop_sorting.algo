@@ -1,0 +1,25 @@
+PROCEDURE ins_arr(VAR a,b : INTEGER)
+VAR
+   tmp : INTEGER;
+BEGIN
+  tmp := a;
+  a := b;
+  b := tmp;
+END
+
+PROCEDURE selection_sort(VAR tab : ARRAY_OF INTEGER(n))
+VAR
+   i,j,min_idx,n : INTEGER;
+BEGIN
+  
+   FOR i FROM 0 TO n-1   DO
+       min_idx := i;
+       FOR j  FROM 0  TO n-i-1  DO
+           IF (tab[j]>tab[min_idx]) THEN
+               min_idx := j;
+           END_IF
+       END_FOR
+
+    ins_arr(arr[min_idx],arr[i])
+   END_FOR
+END
